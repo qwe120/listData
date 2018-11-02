@@ -216,6 +216,12 @@ header span {
   display: inline-block;
   width: 1.33333rem;
   height: 1.17333rem;
+  line-height: 1.17333rem;
+  text-align: center;
+}
+
+header span > img {
+  height: 1.06667rem;
 }
 
 .nav {
@@ -241,7 +247,13 @@ header span {
 }
 
 .nav ul li:hover {
-  border-bottom: 3px solid #ccc;
+  color: #53A7A2;
+  border-bottom: 3px solid #53A7A2;
+}
+
+.active {
+  color: #53A7A2;
+  border-bottom: 3px solid #53A7A2;
 }
 
 section {
@@ -328,34 +340,45 @@ section {
 }
 
 .box dl {
-  width: 50%;
+  width: 100%;
   height: pxTorm(128px);
-  box-shadow: 0 2px 3px #ccc;
   display: flex;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
   display: -webkit-flex;
   /* NEW - Chrome */
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0 0.26667rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-align-items: center;
   align-items: center;
-  -webkit-flex-direction: column;
-  flex-direction: column;
 }
 
 .box dl dt {
-  width: 100%;
+  width: 5.86667rem;
   height: 4.26667rem;
-  text-align: center;
+  text-align: left;
   font-size: 0.8rem;
+  padding: 0.26667rem 0.26667rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .box dl img {
-  height: 4.26667rem;
+  height: 2.13333rem;
+  vertical-align: middle;
 }
 
 .box dl dd {
-  width: 100%;
+  -webkit-flex: 1 1 0%;
+  flex: 1 1 0%;
   height: 1.6rem;
   line-height: 0.53333rem;
   font-size: 0.32rem;
@@ -370,17 +393,18 @@ section {
   align-items: center;
 }
 
-.box dl dd div {
-  width: 100%;
-  height: 0.53333rem;
+.title {
+  height: 1.6rem;
+  line-height: 0.58667rem;
+  font-size: 0.42667rem;
 }
 
-h2 {
+.num {
   width: 100%;
-  height: 1.17333rem;
-  line-height: 1.17333rem;
-  text-align: center;
-  font-size: 0.37333rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.32rem;
+  color: #888999;
 }
 
 footer {

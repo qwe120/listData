@@ -14,10 +14,10 @@
 <body>
     <div class="wrapper">
         <header>
-            <span></span>
+            <span><img src="img/user.png" alt=""></span>
             <div class="nav">
                 <ul>
-                    <li>推荐</li>
+                    <li class="active">推荐</li>
                     <li>热点</li>
                     <li>视频</li>
                     <li>版本</li>
@@ -27,7 +27,7 @@
                     <li>推荐</li>
                 </ul>
             </div>
-            <span></span>
+            <span class="iconfont icon-search"></span>
         </header>
         <section>
            
@@ -38,7 +38,7 @@
                             <img src="img/1.png" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/1.png" alt="">                            
+                            <img src="img/2.png" alt="">                            
                         </div>
                         <div class="swiper-slide">
                             <img src="img/1.png" alt="">                                                        
@@ -50,56 +50,23 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <!-- <div class="product">
+             <div class="product">
                 <div class="box">
                     <div>
-                        <div class="img">
-                        <dl>
-                            <dt>
-                                <img src="img/img1.png" alt="">
-                            </dt>
-                            <dd>
-                                <div class="title">苹果数据线</div>
-                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
-                                <div class="num">仅剩2天</div>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <img src="img/img2.png" alt="">
-                            </dt>
-                            <dd>
-                                <div class="title">苹果数据线</div>
-                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
-                                <div class="num">仅剩2天</div>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="img">
+                        <!-- <div class="img">
                             <dl>
-                            <dt>
-                                <img src="img/img1.png" alt="">
-                            </dt>
-                            <dd>
-                                <div class="title">苹果数据线</div>
-                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
-                                <div class="num">仅剩2天</div>
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>
-                                <img src="img/img1.png" alt="">
-                            </dt>
-                            <dd>
-                                <div class="title">苹果数据线</div>
-                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
-                                <div class="num">仅剩2天</div>
-                            </dd>
-                        </dl>
-                    </div>
+                                <dt>
+                                    <div class="title">苹果数据线</div>
+                                    <div class="num"><span class="price">￥1.9</span><span>券减3元</span></div>
+                                </dt>
+                                <dd>
+                                    <img src="img/one.png" alt="">
+                                </dd>
+                            </dl>
+                        </div> -->
                     </div>
                 </div>
-            </div>  -->
+            </div>  
         </section>
         <footer>
             <dl>
@@ -138,11 +105,42 @@
                 clickable:true
             }
         });
-        // var Bscroll = new BScroll('.box', {
-        //     scrollX: true,
-        //     scrollbar: true,
-        //     click: true
-        // });
+        var xml = new XMLHttpRequest();
+        xml.onreadystatechange = function () {
+            if (xml.readyState === 4) {
+                if (xml.status === 200) {
+                    var data = JSON.parse(xml.responseText);
+                    render(data);
+                }
+            }
+        }
+        xml.open('post', '/data/data', true);
+        xml.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+        xml.send();
+        var Bscroll = new BScroll('.box', {
+            scrollX: true,
+            scrollbar: true,
+            click: true
+        });
+        var box = document.querySelector('.box');
+        var div = box.querySelector('div');
+        function render(data) {
+            var str = '';
+            data.forEach(function (file) {
+                str += `<div class="img">
+                            <dl>
+                                <dt>
+                                    <div class="title">${file.title}</div>
+                                    <div class="num"><span class="price">${file.newsname}</span><span>${file.num}</span></div>
+                                </dt>
+                                <dd>
+                                    <img src="${file.path}" alt="">
+                                </dd>
+                            </dl>
+                        </div>`;
+            });
+            div.innerHTML = str;
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node-dev index"
+  },
+  "dependencies": {
+    "express": "*",
+    "http-errors": "*",
+    "ejs": "*",
+    "mysql": "*"
+  }
+}
