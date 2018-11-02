@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/better-scroll.js"></script>
+    <script src="swiper4/swiper-4.3.5.min.js"></script>
+    <link rel="stylesheet" href="swiper4/swiper-4.3.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <span></span>
+            <div class="nav">
+                <ul>
+                    <li>推荐</li>
+                    <li>热点</li>
+                    <li>视频</li>
+                    <li>版本</li>
+                    <li>官网</li>
+                    <li>推荐</li>
+                    <li>推荐</li>
+                    <li>推荐</li>
+                </ul>
+            </div>
+            <span></span>
+        </header>
+        <section>
+           
+            <div class="content">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/1.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/1.png" alt="">                            
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/1.png" alt="">                                                        
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/1.png" alt="">                                                        
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- <div class="product">
+                <div class="box">
+                    <div>
+                        <div class="img">
+                        <dl>
+                            <dt>
+                                <img src="img/img1.png" alt="">
+                            </dt>
+                            <dd>
+                                <div class="title">苹果数据线</div>
+                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
+                                <div class="num">仅剩2天</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="img/img2.png" alt="">
+                            </dt>
+                            <dd>
+                                <div class="title">苹果数据线</div>
+                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
+                                <div class="num">仅剩2天</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="img">
+                            <dl>
+                            <dt>
+                                <img src="img/img1.png" alt="">
+                            </dt>
+                            <dd>
+                                <div class="title">苹果数据线</div>
+                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
+                                <div class="num">仅剩2天</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="img/img1.png" alt="">
+                            </dt>
+                            <dd>
+                                <div class="title">苹果数据线</div>
+                                <div class="info"><span class="price">￥1.9</span><span>券减3元</span></div>
+                                <div class="num">仅剩2天</div>
+                            </dd>
+                        </dl>
+                    </div>
+                    </div>
+                </div>
+            </div>  -->
+        </section>
+        <footer>
+            <dl>
+                <dt class="iconfont icon-shouye"></dt>
+                <dd>资讯</dd>
+            </dl>
+            <dl>
+                <dt class="iconfont icon-fenlei"></dt>
+                <dd>萌友</dd>
+            </dl>
+            <dl>
+                <dt class="iconfont icon-qrcode"></dt>
+                <dd>电竞</dd>
+            </dl>
+            <dl>
+                <dt class="iconfont icon-qrcode"></dt>
+                <dd>商城</dd>
+            </dl>
+            <dl>
+                <dt class="iconfont icon-wode"></dt>
+                <dd>战绩</dd>
+            </dl>
+        </footer>
+    </div>
+   <script>
+        var Bscroll = new BScroll('.nav', {
+            scrollX: true,
+            click: true
+        });
+        var mySwiper = new Swiper('.swiper-container', {
+            on: {
+                slideChange: function() {}
+            },
+            pagination:{
+                el:'.swiper-pagination',
+                clickable:true
+            }
+        });
+        // var Bscroll = new BScroll('.box', {
+        //     scrollX: true,
+        //     scrollbar: true,
+        //     click: true
+        // });
+    </script>
+</body>
+</html>

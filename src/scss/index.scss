@@ -1,0 +1,191 @@
+@import "common.scss";
+@import "_mixin.scss";
+$width:100%;
+$height:100%;
+.wrapper {
+    width: $width;
+    height: $height;
+    color: #333333;
+    @include box_flex;
+    @include direction(column);
+    font-size: pxTorem(12px);
+    overflow: hidden;
+}
+
+header {
+    width: $width;
+    height: pxTorem(44px);
+    @include box_flex;
+    color: #E7B0C0;
+    @include justify(space-between);
+    @include align;
+    font-size: pxTorem(16px);
+    span{
+        display: inline-block;
+        width: pxTorem(50px);
+        height: pxTorem(44px);
+    }
+}
+.nav{
+    @include flex;
+    height: pxTorem(50px);
+    // @include box_flex;
+    // @include justify;
+    // @include align;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.nav ul{
+    // height: pxTorem(50px);
+    // height: 100%;
+    // @include box_flex;
+    // @include justify;
+    // @include align;
+    width: 250%;
+    li {
+        // float: left;
+        display: inline-block;
+        width: pxTorem(60px);
+        text-align: center;
+        line-height: pxTorem(50px);
+        font-size: pxTorem(12px);
+        color: #888;
+        &:hover {
+            border-bottom: 3px solid #ccc;
+        }
+    }
+}
+
+section {
+    width: $width;
+    @include box_flex;
+    @include flex;
+    @include flexFlow($dir: column, $wrap: wrap);
+}
+
+.content {
+    width: 100%;
+    height: pxTorem(220px);
+    h3{
+        height: pxTorem(40px);
+        // line-height: pxTorem(40px);
+        @include box_flex;
+        @include justify(space-between);
+        padding: 0 pxTorem(10px);
+        @include sizing;
+        @include align;
+        font-size: pxTorem(14px);
+    }
+}
+.swiper-wrapper{
+    height: pxTorem(174px);
+}
+.product{
+    width: 100%;
+    @include flex;
+    @include box_flex;
+     @include direction(column);
+}
+.box{
+    @include box_flex;
+    width: 100%;
+    @include flex;
+    @include justify(space-between);
+    // padding: 0 pxTorem(10px);
+    // @include sizing;
+    @include align;
+    overflow: hidden;
+    @include direction(column);
+    position: relative;
+}
+.img{
+    width: 100%;
+    height: pxTorm(188px);
+    @include box_flex;
+    @include justify;
+    // padding: 0 pxTorem(10px);
+    // @include sizing;
+    @include align;
+}
+.box dl{
+    width: 50%;
+    height: pxTorm(128px);
+    box-shadow: 0 2px 3px #ccc;
+    @include box_flex;
+        @include justify;
+        // padding: 0 pxTorem(10px);
+        // @include sizing;
+        @include align;
+        @include direction(column);
+    dt {
+    width: 100%;
+    height: pxTorem(160px);
+    text-align: center;
+    font-size: pxTorem(30px);
+    }
+    img{
+        height: pxTorem(160px);
+    }
+    dd {
+    width: 100%;
+    height: pxTorem(60px);
+    line-height: pxTorem(20px);
+    font-size: pxTorem(12px);
+    text-align: center;  
+    @include box_flex;
+    @include direction(column);
+    
+    // @include justify;
+    // padding: 0 pxTorem(10px);
+    // @include sizing;
+    @include align;  
+    div{
+        width: 100%;
+        height: pxTorem(20px);
+    }
+    }
+}
+h2{
+    width: 100%;
+    height: pxTorem(44px);
+    line-height: pxTorem(44px);
+    text-align: center;
+    font-size: pxTorem(14px);
+}
+
+footer{
+    @include box_flex;
+    @include justify;
+    @include align;
+    width: 100%;
+    height: pxTorem(56px);
+    
+}
+dl {
+    // height: pxTorem(200px);
+    width: $width;
+    height: 100%;
+    border-top: 1px solid #999999;
+    // @include box_flex;
+    @include justify;
+    @include align;
+    @include flex;
+    // padding: pxTorem(22px) pxTorem(25px);
+    dt {
+        width: 100%;
+        height: pxTorem(28px);
+        text-align: center;
+        font-size: pxTorem(30px);
+        padding-top: pxTorem(6px);
+    }
+    dd {
+    height: pxTorem(18px);
+    line-height: pxTorem(18px);
+    font-size: pxTorem(12px);
+    text-align: center;    
+    }
+}
+
+
+
